@@ -9,7 +9,7 @@ import { Restaurant } from '@/types';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Star, MapPin, DollarSign } from 'lucide-react';
+import { RefreshCw, MapPin, DollarSign } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AddPlaceDialog } from '../AddPlaceDialog';
 
@@ -100,16 +100,12 @@ export default function StepResult({ state, onReset }: StepResultProps) {
                         <Card className="overflow-hidden hover:shadow-lg transition-shadow border-2">
                             <CardHeader className="p-4 pb-2 bg-gradient-to-r from-gray-50 to-white">
                                 <div className="flex justify-between items-start">
-                                    <div>
+                                    <div className="w-full">
                                         <h3 className="text-xl font-bold flex items-center gap-2">
                                             <span className="text-2xl text-blue-600">{idx + 1}.</span>
                                             {place.name}
                                             <Badge variant="secondary" className="text-xs">{place.category}</Badge>
                                         </h3>
-                                    </div>
-                                    <div className="flex items-center text-yellow-500 font-bold text-lg">
-                                        <Star className="w-5 h-5 fill-current mr-1" />
-                                        {place.aiRating?.toFixed(1) || place.rating.toFixed(1)}
                                     </div>
                                 </div>
                             </CardHeader>
