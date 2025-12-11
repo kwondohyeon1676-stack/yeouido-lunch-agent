@@ -17,6 +17,7 @@ export const BUILDING_LABELS: Record<string, string> = {
     ESTRENUE: '에스트레뉴',
     FKI: '전경련',
     O2_TOWER: '오투타워',
+    ILEX: '아일렉스',
     OTHER: '기타'
 };
 

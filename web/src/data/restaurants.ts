@@ -165,6 +165,44 @@ export const MOCK_RESTAURANTS: Restaurant[] = [
         map_url: 'https://naver.me/baeknyeon'
     },
 
+    // --- ILEX (아일렉스) ---
+    {
+        id: 'ilex-1',
+        name: '동남집',
+        category: 'KOREAN',
+        building: 'ILEX',
+        price_range: 'MODERATE',
+        rating: 4.2,
+        tags: ['곰탕', '왕갈비탕', '면사리'],
+        description: '진한 국물의 곰탕과 왕갈비탕. 면사리 추가 필수.',
+        recommended_for: ['BOSS', 'TEAM_LEAD', 'ALONE'],
+        map_url: 'https://naver.me/dongnam'
+    },
+    {
+        id: 'ilex-2',
+        name: '짜글이',
+        category: 'KOREAN',
+        building: 'ILEX',
+        price_range: 'MODERATE',
+        rating: 4.1,
+        tags: ['돼지짜글이', '스팸짜글이', '집밥'],
+        description: '얼큰한 짜글이에 집밥 느낌. 스팸 듬뿍.',
+        recommended_for: ['FRIEND', 'TEAM_LEAD', 'ALONE'],
+        map_url: 'https://naver.me/nangman'
+    },
+    {
+        id: 'ilex-3',
+        name: '남도고깃간',
+        category: 'KOREAN',
+        building: 'ILEX',
+        price_range: 'MODERATE',
+        rating: 4.3,
+        tags: ['김치찌개', '제육볶음', '계란말이'],
+        description: '김치찌개 맛집. 계란말이 서비스 혜자.',
+        recommended_for: ['FRIEND', 'JUNIOR', 'ALONE'],
+        map_url: 'https://naver.me/namdo'
+    },
+
     // --- ESTRENUE (에스트레뉴) ---
     {
         id: 'es-1',

@@ -2,7 +2,7 @@ export type CuisineType = 'KOREAN' | 'CHINESE' | 'JAPANESE' | 'WESTERN' | 'SNACK
 
 export type CompanionType = 'ALONE' | 'FRIEND' | 'BOSS' | 'JUNIOR' | 'TEAM_LEAD' | 'PARTNER';
 
-export type BuildingCode = 'IFC' | 'THE_HYUNDAI' | 'TP_TOWER' | 'POST_OFFICE' | 'KYOBO' | 'MUKJA' | 'ESTRENUE' | 'FKI' | 'O2_TOWER' | 'OTHER';
+export type BuildingCode = 'IFC' | 'THE_HYUNDAI' | 'TP_TOWER' | 'POST_OFFICE' | 'KYOBO' | 'MUKJA' | 'ESTRENUE' | 'FKI' | 'O2_TOWER' | 'ILEX' | 'OTHER';
 
 export interface Restaurant {
     id: string;
