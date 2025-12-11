@@ -19,11 +19,13 @@ export const CUISINE_OPTIONS: { value: CuisineType; label: string }[] = [
 ];
 
 export const BUILDING_OPTIONS: { value: BuildingCode; label: string }[] = [
+    { value: 'TP_TOWER', label: '🏢 TP 타워 (사학연금)' }, // 가장 많이 사용
+    { value: 'KYOBO', label: '교보증권' },
+    { value: 'O2_TOWER', label: '오투타워' },
+    { value: 'ESTRENUE', label: '에스트레뉴' },
     { value: 'IFC', label: 'IFC 몰' },
     { value: 'THE_HYUNDAI', label: '더현대 서울' },
-    { value: 'TP_TOWER', label: 'TP 타워 (사학연금)' },
     { value: 'POST_OFFICE', label: '여의도 우체국' },
-    { value: 'KYOBO', label: '교보증권' },
     { value: 'OTHER', label: '그 외 (여의도 전역)' },
 ];
 

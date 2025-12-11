@@ -8,7 +8,7 @@ import { Restaurant } from '@/types';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { RefreshCw, Map, Star } from 'lucide-react';
+import { RefreshCw, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AddPlaceDialog } from '../AddPlaceDialog';
 
@@ -96,13 +96,6 @@ export default function StepResult({ state, onReset }: StepResultProps) {
                                     {place.price_range} • {place.building}
                                 </div>
                             </CardContent>
-                            <CardFooter className="p-2 bg-gray-50 flex justify-between">
-                                <Button variant="ghost" size="sm" asChild className="w-full">
-                                    <a href={place.map_url || '#'} target="_blank" rel="noreferrer">
-                                        <Map className="w-4 h-4 mr-2" /> 지도 보기
-                                    </a>
-                                </Button>
-                            </CardFooter>
                         </Card>
                     </motion.div>
                 ))}

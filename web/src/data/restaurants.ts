@@ -64,6 +64,106 @@ export const MOCK_RESTAURANTS: Restaurant[] = [
         recommended_for: ['BOSS', 'TEAM_LEAD'],
         map_url: 'https://naver.me/mutan'
     },
+    {
+        id: 'tp-4',
+        name: '유림면',
+        category: 'KOREAN',
+        building: 'TP_TOWER',
+        price_range: 'MODERATE',
+        rating: 4.4,
+        tags: ['메밀국수', '냄비우동', '미슐랭'],
+        description: '겨울엔 냄비우동 웨이팅 필수. 미슐랭 빕 그루망 3년 연속.',
+        recommended_for: ['ALONE', 'FRIEND', 'TEAM_LEAD'],
+        map_url: 'https://naver.me/yurim'
+    },
+    {
+        id: 'tp-5',
+        name: '오근내닭갈비',
+        category: 'KOREAN',
+        building: 'TP_TOWER',
+        price_range: 'MODERATE',
+        rating: 4.2,
+        tags: ['닭갈비', '우동사리', '회식'],
+        description: '회식으로 여전히 인기 많음. 우동사리 추가 필수.',
+        recommended_for: ['TEAM_LEAD', 'FRIEND', 'JUNIOR'],
+        map_url: 'https://naver.me/ogeunnae'
+    },
+    {
+        id: 'tp-6',
+        name: '키쿠카와',
+        category: 'JAPANESE',
+        building: 'TP_TOWER',
+        price_range: 'EXPENSIVE',
+        rating: 4.6,
+        tags: ['장어덮밥', '룸', '고급'],
+        description: '예약 전쟁인 장어 다이닝. 프라이빗 룸 완비.',
+        recommended_for: ['BOSS', 'TEAM_LEAD', 'PARTNER'],
+        map_url: 'https://naver.me/kikukawa'
+    },
+    {
+        id: 'tp-7',
+        name: '호시우보',
+        category: 'KOREAN',
+        building: 'TP_TOWER',
+        price_range: 'LUXURY',
+        rating: 4.5,
+        tags: ['한우', '보양식', '접대'],
+        description: '프라이빗한 접대 장소. 숙성 한우 전문.',
+        recommended_for: ['BOSS', 'TEAM_LEAD'],
+        map_url: 'https://naver.me/hoshiubo'
+    },
+    {
+        id: 'tp-8',
+        name: '심퍼티쿠시',
+        category: 'WESTERN',
+        building: 'TP_TOWER',
+        price_range: 'EXPENSIVE',
+        rating: 4.3,
+        tags: ['와인', '파스타', '소개팅'],
+        description: '소개팅 명소로 자리 잡음. 와인 리스트 훌륭.',
+        recommended_for: ['PARTNER', 'FRIEND'],
+        map_url: 'https://naver.me/simperti'
+    },
+
+    // --- FKI (전경련회관) ---
+    {
+        id: 'fki-5',
+        name: '패티바이번',
+        category: 'WESTERN',
+        building: 'FKI',
+        price_range: 'MODERATE',
+        rating: 4.3,
+        tags: ['수제버거', '치즈버거', '웨이팅'],
+        description: '전경련 지하의 숨은 버거 강자. 점심 웨이팅 있음.',
+        recommended_for: ['FRIEND', 'JUNIOR', 'ALONE'],
+        map_url: 'https://naver.me/pattybybun'
+    },
+    {
+        id: 'fki-6',
+        name: '차이나플레인',
+        category: 'CHINESE',
+        building: 'FKI',
+        price_range: 'EXPENSIVE',
+        rating: 4.4,
+        tags: ['차돌짬뽕', '코스요리', '룸'],
+        description: '깔끔한 중식당. 룸이 많아서 팀 점심 회식으로 자주 감.',
+        recommended_for: ['TEAM_LEAD', 'BOSS'],
+        map_url: 'https://naver.me/chinaplain'
+    },
+
+    // --- MUKJA (여의도종합상가) ---
+    {
+        id: 'mj-1',
+        name: '백년도담솥밥',
+        category: 'KOREAN',
+        building: 'MUKJA',
+        price_range: 'MODERATE',
+        rating: 4.2,
+        tags: ['솥밥', '제육정식', '반찬'],
+        description: '반찬 9가지에 솥밥 조합 인기. 든든한 한 끼.',
+        recommended_for: ['ALONE', 'FRIEND', 'TEAM_LEAD'],
+        map_url: 'https://naver.me/baeknyeon'
+    },
 
     // --- ESTRENUE (에스트레뉴) ---
     {
@@ -116,58 +216,9 @@ export const MOCK_RESTAURANTS: Restaurant[] = [
         recommended_for: ['ALONE', 'FRIEND', 'JUNIOR'],
         map_url: 'https://naver.me/ohansu'
     },
-    {
-        id: 'o2-3',
-        name: '제주산방식당',
-        category: 'KOREAN',
-        building: 'O2_TOWER',
-        price_range: 'MODERATE',
-        rating: 4.1,
-        tags: ['밀면', '수육', '제주식'],
-        description: '시원한 제주식 밀면과 쫄깃한 수육한접시.',
-        recommended_for: ['ALONE', 'FRIEND', 'TEAM_LEAD'],
-        map_url: 'https://naver.me/sanbang'
-    },
-
-    // --- IFC ---
-    {
-        id: 'ifc-1',
-        name: '테이스팅룸',
-        category: 'WESTERN',
-        building: 'IFC',
-        price_range: 'EXPENSIVE',
-        rating: 4.3,
-        tags: ['파스타', '퓨전', '분위기'],
-        description: '시금치 플랫브레드가 유명한 퓨전 이탈리안.',
-        recommended_for: ['PARTNER', 'FRIEND'],
-        map_url: 'https://naver.me/tasting'
-    },
-    {
-        id: 'ifc-2',
-        name: '오복수산',
-        category: 'JAPANESE',
-        building: 'IFC',
-        price_range: 'EXPENSIVE',
-        rating: 4.5,
-        tags: ['카이센동', '해산물', '깔끔'],
-        description: '신선한 해산물이 듬뿍 올라간 카이센동 맛집.',
-        recommended_for: ['PARTNER', 'BOSS', 'ALONE'],
-        map_url: 'https://naver.me/obok'
-    },
 
     // --- OTHER ---
-    {
-        id: 'ot-1',
-        name: '진주집',
-        category: 'KOREAN',
-        building: 'MUKJA', // 먹자빌딩 (상가)
-        price_range: 'MODERATE',
-        rating: 4.6,
-        tags: ['콩국수', '닭칼국수', '줄서는'],
-        description: '여의도 레전드 콩국수. 여름엔 줄이 깁니다.',
-        recommended_for: ['JUNIOR', 'FRIEND', 'PARTNER'],
-        map_url: 'https://naver.me/jinju'
-    },
+
     {
         id: 'ot-2',
         name: '가양칼국수',
