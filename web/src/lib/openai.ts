@@ -73,17 +73,21 @@ export async function getAIComment(companion: string): Promise<string> {
             messages: [
                 {
                     role: 'system',
-                    content: '당신은 재치있는 여의도 직장인 점심 추천 AI입니다. 짧고 재미있는 한마디를 해주세요.'
+                    content: '당신은 여의도 직장인들의 점심 고민을 해결해주는 재치있고 유머러스한 AI입니다. 상황에 맞는 센스있고 웃긴 한마디를 해주세요. 이모지를 적절히 활용하고, 직장인 공감 포인트를 찔러주세요.'
                 },
                 {
                     role: 'user',
                     content: `동행인: ${companion}
           
-이 상황에 맞는 재미있고 짧은 한마디를 해주세요. (20자 이내, 이모지 포함 가능)`
+이 상황에 딱 맞는 재치있고 웃긴 한마디를 해주세요. 
+- 20~30자 정도
+- 이모지 1~2개 포함
+- 직장인 공감 포인트나 상황별 드립 환영
+- 예시: "법카 한도 체크하세요 💳", "후배 앞에서 선배 위엄 보여줄 시간 😎", "혼밥 천국, 아무도 날 신경 안 씀 🎧"`
                 }
             ],
-            temperature: 0.9,
-            max_tokens: 50
+            temperature: 1.0,
+            max_tokens: 100
         });
 
         return response.choices[0].message.content?.trim() || '맛있는 점심 되세요!';

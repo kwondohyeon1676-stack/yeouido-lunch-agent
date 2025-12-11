@@ -31,7 +31,7 @@ export default function LunchWizard() {
     };
 
     return (
-        <div className="w-full max-w-md mx-auto p-4 min-h-screen flex flex-col justify-center">
+        <div className="w-full max-w-md mx-auto p-4 min-h-screen flex flex-col items-start pt-20">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={step}
