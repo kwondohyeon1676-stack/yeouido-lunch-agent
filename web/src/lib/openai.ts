@@ -14,12 +14,13 @@ interface AIRatingRequest {
     tags: string[];
     priceRange: string;
     companion: string;
+    baseRating: number; // 실제 평점 (3.5~5.0)
 }
 
 export async function getAIRating(restaurant: AIRatingRequest): Promise<number> {
     if (!openai) {
-        // API 키 없으면 랜덤 평점 (3.5~4.5)
-        return Math.random() * 1 + 3.5;
+        // API 키 없으면 베이스 평점 그대로 반환
+        return restaurant.baseRating;
     }
 
     try {
@@ -28,28 +29,41 @@ export async function getAIRating(restaurant: AIRatingRequest): Promise<number> 
             messages: [
                 {
                     role: 'system',
-                    content: '당신은 여의도 직장인 맛집 평가 전문가입니다. 누구랑 먹는지에 따라 식당의 적합도를 0~5점으로 평가합니다.'
+                    content: `당신은 여의도 직장인 맛집 평가 전문가입니다. 
+실제 평점을 기준으로, 누구랑 먹는지에 따라 가감점을 부여합니다.
+
+평가 기준:
+- 임원/대표님: 고급스러움(+0.3), 프라이빗(+0.2), 저렴함(-0.3)
+- 팀장님: 적당한 가격(+0.2), 검증된 맛집(+0.1), 너무 비쌈(-0.2)
+- 동료/친구: 분위기 좋음(+0.2), 가성비(+0.2), 격식(−0.1)
+- 후배: 가성비(+0.3), 양 많음(+0.2), 비쌈(-0.3)
+- 혼밥: 조용함(+0.3), 빠른 서빙(+0.2), 시끄러움(-0.3)
+- 연인/썸: 분위기(+0.3), 프라이빗(+0.2), 시끄러움(-0.3)
+
+최종 평점 = 실제 평점 + 상황 가감점 (최소 0, 최대 5)`
                 },
                 {
                     role: 'user',
                     content: `식당: ${restaurant.restaurantName}
+실제 평점: ${restaurant.baseRating}점
 설명: ${restaurant.description}
 태그: ${restaurant.tags.join(', ')}
 가격대: ${restaurant.priceRange}
 동행인: ${restaurant.companion}
 
-이 상황에서 이 식당의 적합도를 0~5점 사이의 숫자 하나만 답변해주세요. (예: 4.2)`
+위 평가 기준에 따라 가감점을 계산하고, 최종 평점을 숫자 하나만 답변해주세요.
+(예: 4.2)`
                 }
             ],
-            temperature: 0.7,
+            temperature: 0.3, // 일관성을 위해 낮춤
             max_tokens: 10
         });
 
-        const rating = parseFloat(response.choices[0].message.content?.trim() || '4.0');
-        return Math.min(5, Math.max(0, rating)); // 0~5 범위로 제한
+        const rating = parseFloat(response.choices[0].message.content?.trim() || restaurant.baseRating.toString());
+        return Math.min(5, Math.max(0, rating));
     } catch (error) {
         console.error('AI rating error:', error);
-        return Math.random() * 1 + 3.5; // 에러시 랜덤
+        return restaurant.baseRating; // 에러시 베이스 평점 반환
     }
 }
 

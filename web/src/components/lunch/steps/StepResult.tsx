@@ -52,7 +52,8 @@ export default function StepResult({ state, onReset }: StepResultProps) {
                         description: restaurant.description,
                         tags: restaurant.tags,
                         priceRange: PRICE_LABELS[restaurant.price_range],
-                        companion: COMPANION_LABELS[state.companion!]
+                        companion: COMPANION_LABELS[state.companion!],
+                        baseRating: restaurant.rating // 실제 평점 전달
                     });
                     return { ...restaurant, aiRating };
                 })
